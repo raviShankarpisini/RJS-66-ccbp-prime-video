@@ -1,0 +1,28 @@
+/* Write your code here. */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-size: cover;
+  /* overflow: auto; */
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* align-self: center; */
+  background-image: linear-gradient(to bottom, #6a59ff, #fbc7d4);
+  height: 100%;
+  overflow: auto;
+}
+.ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0px;
+  max-width: 60vw;
+  width: 100%;
+}

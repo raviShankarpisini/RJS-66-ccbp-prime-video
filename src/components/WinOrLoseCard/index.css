@@ -1,0 +1,63 @@
+/* Write your code here. */
+.win-loss-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 60vw;
+  background-color: #ffffff33;
+  border-radius: 10px;
+  margin: 30px;
+  flex-wrap: wrap;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+.win-loss-heading {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+.score-title {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+.score-style {
+  color: #6a59ff;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 20px;
+}
+.play-again-button {
+  color: #3d3d3d;
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #ffce27;
+}
+.win-loss-image {
+  max-width: 280px;
+  width: 100%;
+}
+@media screen and (max-width: 576px) {
+  .text-container {
+    order: 1;
+  }
+  .win-loss-container {
+    flex-direction: column;
+  }
+  .win-loss-image {
+    max-width: 200px;
+  }
+}
