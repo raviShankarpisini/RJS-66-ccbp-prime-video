@@ -1,7 +1,7 @@
-import Events from './components/Events'
-
 import './App.css'
 
-const App = () => <Events />
+import GithubPopularRepos from './components/GithubPopularRepos'
+
+const App = () => <GithubPopularRepos />
 
 export default App
