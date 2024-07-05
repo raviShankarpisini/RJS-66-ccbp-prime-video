@@ -11,297 +11,214 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.bg-container {
+.app-container {
   display: flex;
-  justify-content: center;
-  background-color: #9ba9eb;
-  height: 100%;
+  flex-direction: column;
+  height: 100vh;
   background-size: cover;
 }
-.app-container {
-  width: 90%;
-  margin: 30px;
-}
-.app-logo {
+.nav-bar-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: #2c0e3a;
+  /* padding-left: 30px; */
+  align-items: center;
   height: 40px;
 }
-.inputs-container {
-  background-color: #5763a5;
+
+.app-logo-image {
+  height: 30px;
+  width: 100;
+}
+
+.score-time-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px;
-  border-radius: 10px;
 }
-.form-container {
+
+.score {
+  font-family: 'Roboto';
+  font-size: 15px;
   padding: 15px;
-  border-radius: 15px;
-  background-color: #454f84;
-  width: 400px;
+  color: #ffffff;
 }
 
-.form-heading {
-  font-family: 'Roboto';
-  font-size: 15px;
-  color: #f8fafc;
-}
-.input-container {
+.score-text {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
-  margin-bottom: 10px;
 }
 
-.icon {
-  background-color: #f8fafc;
-  height: 30px;
-  padding: 5px;
+.span-text {
+  color: #fec653;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Roboto';
 }
-.icon-style {
+
+.time-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+}
+
+.timer-logo {
   height: 20px;
+  padding-right: 10px;
 }
-.input {
-  height: 30px;
-  background-color: #f8fafc;
-  border: none;
-  width: 100%;
 
-}
-.add-button-container {
+.bottom-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-bg.png');
+  min-width: 100vw;
+  flex-grow: 1;
+  background-size: cover;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-.add-button {
-  align-self: flex-end;
-  background-color: #0b69ff;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  color: white;
-  font-family: 'Roboto';
-  font-size: 15px;
-  height: 30px;
-  width: 80px;
-  border-radius: 10px;
-}
-
-.password-manager-image {
-  width: 100%;
-  max-width: 400px;
-}
-
-.passwords-container {
-  background-color: #5763a5;
-  border-radius: 10px;
-  padding: 30px;
-  margin-top: 30px;
-}
-
-.title-and-search-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.title-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.password-heading {
-  font-family: 'Roboto';
-  font-size: 15px;
-  color: white;
-  font-weight: bold;
-}
-
-.count {
-  font-family: 'Roboto';
-  font-size: 15px;
-  color: white;
-  font-weight: bold;
-  padding: 5px;
-  border-radius: 10px;
-  border: solid 0.5px white;
-  margin-left: 10px;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-}
-.search-logo {
-  background-color: #f8fafc;
-  height: 30px;
-  width: 30px;
-  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-right: 0.5px solid #5763a5;
 }
 
-.search-image {
-  height: 20px;
-  margin: auto;
-}
-.search-input {
-  height: 30px;
-  background-color: #f8fafc;
-  border: none;
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-width: 50vw; */
 }
 
-.checkBox-container {
+.match-image {
+  width: 40vw;
+  height: 100;
+  padding-top: 20px;
+}
+
+.tabs-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
-.checkBox-text {
+.tab-button {
+  background-color: transparent;
+  border: none;
   color: white;
-  font-family: 'Roboto';
-  font-size: 15px;
+  cursor: pointer;
+  outline: none;
 }
 
 ul {
   list-style: none;
   padding: 0px;
-}
-
-.delete-card {
-  border-radius: 10px;
-  padding: 10px;
-  border: solid #b6c3ca 1px;
-  width: 200px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-  margin-top: 10px;
-  justify-content: space-between;
-}
-.sub-card {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-self: center;
+  margin: 0px;
 }
 
-.color1 {
-  background-color: #b6c3ca;
-}
-.color2 {
-  background-color: #7683cb;
-}
-.color3 {
-  background-color: #f59e0b;
-}
-.color4 {
-  background-color: #10b981;
-}
-.color5 {
-  background-color: #f97316;
-}
-.color6 {
-  background-color: #b91c1c;
-}
-.color7 {
-  background-color: #14b8a6;
-}
-.color8 {
-  background-color: #ffffff;
-}
-.color9 {
-  background-color: #0ea5e9;
-}
-
-.user-logo {
-  height: 30px;
-  width: 30px;
-  border-radius: 100%;
-  text-align: center;
-  color: white;
-  font-family: 'Roboto';
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-}
-.text-container {
-  color: white;
-  font-family: 'Roboto';
-  font-size: 15px;
-}
-
-.delete-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.delete-icon {
-  height: 20px;
-}
-
-.delete-container {
+.images-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.stars {
-  width: 100px;
-  width: 100;
+.thumbnail-image-button {
+  padding: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  border: none;
 }
-.no-passwords-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-}
-.no-passwords-image {
-  max-width: 500px;
-  width: 100;
-}
-.no-password-text {
-  color: white;
-  font-family: 'Roboto';
-  font-size: 15px;
-  text-align: center;
-}
-.passwords-cards-container {
-  display: flex;
-  flex-direction: row;
-}
-.medium-view {
-  display: none;
+.thumbnail {
+  height: 70px;
+  width: 70px;
 }
 
-@media screen and (max-width: 768px) {
-  .inputs-container {
-    flex-direction: column;
+.scoreCard-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
+  /* max-height: 500px; */
+  padding: 30px;
+  /* background-size: cover; */
+  /* width: 50vw; */
+  /* width: 100vw;
+  height: 100%; */
+  /* max-height: 400px;
+  width: 100%; */
+}
+
+.trophy {
+  width: 180px;
+  margin-top: 150px;
+}
+
+.your-score {
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.final-score {
+  font-size: 25px;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+
+.reset-button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #cf60c8;
+  border-radius: 15px;
+  padding: 10px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.reset-icon {
+  width: 30px;
+  padding-right: 10px;
+}
+
+.play-again-text {
+  color: white;
+  font-size: 15px;
+  font-family: 'Roboto';
+}
+
+.activeTab {
+  color: #fec653;
+  border-bottom: solid 1px #fec653;
+}
+.tab-heading {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 576px) {
+  .thumbnail {
+    height: 50px;
+    width: 50px;
   }
-  .form-container {
-    order: 1;
+  .scoreCard-container {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-sm-bg.png');
   }
-  .app-logo {
-    max-width: 300px;
-  }
-  .no-passwords-image {
-    max-width: 300px;
-  }
-  .delete-container {
-    flex-direction: column;
-  }
-  .large-view {
-    display: none;
-  }
-  .medium-view {
-    display: flex;
+  .nav-bar-container {
+    flex-wrap: wrap;
   }
 }

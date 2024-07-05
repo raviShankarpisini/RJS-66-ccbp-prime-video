@@ -1,279 +1,492 @@
 import {Component} from 'react'
-import {v4 as uuid} from 'uuid'
 
 import './App.css'
 
-const colors = [
-  'color1',
-  'color2',
-  'color3',
-  'color4',
-  'color5',
-  'color6',
-  'color7',
-  'color8',
+// These are the lists used in the application. You can move them to any component needed.
+const tabsList = [
+  {tabId: 'FRUIT', displayText: 'Fruits'},
+  {tabId: 'ANIMAL', displayText: 'Animals'},
+  {tabId: 'PLACE', displayText: 'Places'},
+]
+const imagesList = [
+  {
+    id: 'b11ec8ce-35c9-4d67-a7f7-07516d0d8186',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/orange-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/orange-thumbnail-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: '04ac6b9f-b7e7-45f7-a8fc-fd48f3f72526',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/panda-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/panda-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: 'a132f546-5b2b-4c0d-b9e4-e524bdf904cc',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/zebra-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/zebra-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: 'd89386da-94db-4275-9cb5-249c6e071a19',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/paris-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/paris-thumbnail-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: 'd810bbb0-1683-407a-8db6-898fe7b75782',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/giraffe-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/giraffe-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: '176aab62-e86a-4ccd-8b89-5b83c3f02506',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/taj-mahal-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/taj-mahal-thumbnail-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: '0e8daf1b-45b0-4eb0-9dde-383fede78a9b',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/monkey-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/monkey-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: '1a38bf4a-659d-4470-956c-56c1bedd26ac',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/cheetah-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/cheetah-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: '8f2ebd70-4fdd-47a0-b4f9-a6c654b519ab',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/ooti-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/ooti-thumbnail-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: '7a72c38e-a83d-48eb-b9ce-ae3c0361cc49',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/pineapple-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/pineapple-thumbnail-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: '97a33ed5-98ed-4c95-a8f0-1595880b3b69',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/strawberry-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/strawberry-thumbnail-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: '07e20159-a950-4c22-9ca8-5ed71563ae24',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/maldives-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/maldives-thumbnail-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: '43883239-8a28-47dc-9e93-43ef31654c17',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/emerald-lake-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/emerald-thumbnail-lake-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: '49865ac4-b5e8-4d04-893b-d69ad6004da8',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/watermelon-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/watermelon-thumbnail-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: '649ab251-7fd6-4d65-aa0f-39020ce25932',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/elephant-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/elephant-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: '1d0d1c41-e05e-4820-8614-34ee5ada20e0',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/jammu-hills-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/jammu-thumbnail-hills-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: '88b4ab36-a0c1-4c56-9ce5-3b80dd8c7669',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/fierce-coyote-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/fierce-thumbnail-coyote-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: '8a841bf8-3222-44da-b0fb-4c60190402d7',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/lidder-valley-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/lidder-thumbnail-valley-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: 'd406e63c-eaaf-49ea-88a6-ed6a1572eb97',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/kivi-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/kivi-thumbnail-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: 'e997ebf9-9a47-4b7e-9035-01ae372d73dc',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/dragon-fruit-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/dragon-thumbnail-fruit-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: 'c7fbe10e-3282-4fca-815b-91b75d5228cb',
+    imageUrl: 'https://assets.ccbp.in/frontend/react-js/match-game/goa-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/goa-thumbnail-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: '4210274c-7304-44d6-8690-c5251252cd10',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/papaya-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/papaya-thumbnail-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: '057b6193-a80d-4036-9e6e-fe847c99fbb6',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/mixed-fruits-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/mixed-thumbnail-fruits-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: '4e56c59b-835b-4802-87fe-77aaaa5b9526',
+    imageUrl: 'https://assets.ccbp.in/frontend/react-js/match-game/fox-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/fox-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: 'ad75a7b1-0875-4700-977b-2c45924509aa',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/lotus-temple-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/lotus-thumbnail-temple-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: '525aba17-ed5c-4f09-ad1c-b6bff222c97a',
+    imageUrl: 'https://assets.ccbp.in/frontend/react-js/match-game/dog-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/dog-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: 'c6c66b00-c130-47d2-9d3a-1c3378d08aba',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/apple-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/apple-thumbnail-img.png',
+    category: 'FRUIT',
+  },
+  {
+    id: '6078b408-4f10-46d3-8815-db14403dbd73',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/bhadrinath-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/bhadrinath-thumbnail-img.png',
+    category: 'PLACE',
+  },
+  {
+    id: 'a2baca84-3beb-49d1-bced-f9a88c161bec',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/camel-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/camel-thumbnail-img.png',
+    category: 'ANIMAL',
+  },
+  {
+    id: '1edac278-8390-4da9-b914-5f41fb49283c',
+    imageUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/cherry-img.png',
+    thumbnailUrl:
+      'https://assets.ccbp.in/frontend/react-js/match-game/cherry-thumbnail-img.png',
+    category: 'FRUIT',
+  },
 ]
 
-const NoPassword = () => (
-  <div className="no-password-container">
-    <img
-      src="https://assets.ccbp.in/frontend/react-js/no-passwords-img.png"
-      alt="no passwords"
-      className="no-passwords-image"
-    />
-    <p className="no-password-text">No Passwords</p>
-  </div>
-)
+const Score = props => {
+  const {score, playAgain} = props
 
-const PasswordElement = props => {
-  const {eachItem, deleteListItem, isPasswordsVisible} = props
-  const {id, usernameInput, passwordInput, websiteInput, randomColor} = eachItem
+  const onClickPlayAgain = () => {
+    playAgain()
+  }
+  return (
+    <div className="scoreCard-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/match-game-trophy.png"
+        alt="trophy"
+        className="trophy"
+      />
+      <p className="your-score">YOUR SCORE</p>
+      <p className="final-score">{score}</p>
+      <button type="button" className="reset-button" onClick={onClickPlayAgain}>
+        <div className="button-container">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/match-game-play-again-img.png"
+            alt="reset"
+            className="reset-icon"
+          />
+          <p className="play-again-text">PLAY AGAIN</p>
+        </div>
+      </button>
+    </div>
+  )
+}
 
-  const deleteItem = () => {
-    deleteListItem(id)
+const Image = props => {
+  const {eachImage, thumbnailClick} = props
+  const {thumbnailUrl, id} = eachImage
+
+  const onClickThumbnail = () => {
+    thumbnailClick(id)
   }
 
-  const password = isPasswordsVisible ? (
-    <p>{passwordInput}</p>
-  ) : (
-    <img
-      src="https://assets.ccbp.in/frontend/react-js/password-manager-stars-img.png"
-      alt="stars"
-      className="stars"
-    />
-  )
-
   return (
-    <li className="delete-card">
-      <div className="sub-card">
-        <div className={`user-logo ${randomColor}`}>
-          <p>{usernameInput[0]}</p>
-        </div>
-        <div className="text-container">
-          <p className="websiteName">{websiteInput}</p>
-          <p className="websiteName">{usernameInput}</p>
-          {password}
-        </div>
-      </div>
-
+    <li>
       <button
-        className="delete-button"
-        testid="delete"
         type="button"
-        onClick={deleteItem}
+        className="thumbnail-image-button"
+        onClick={onClickThumbnail}
       >
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/password-manager-delete-img.png"
-          alt="delete"
-          className="delete-icon"
-        />
+        <img src={thumbnailUrl} alt="thumbnail" className="thumbnail" />
       </button>
     </li>
   )
 }
 
+const Tabs = props => {
+  const {eachTab, changeTab, isTabActive} = props
+  const {tabId, displayText} = eachTab
+
+  const onClickTab = () => {
+    changeTab(tabId)
+  }
+
+  const activeTabCss = isTabActive ? 'activeTab' : ''
+  return (
+    <li>
+      <button
+        type="button"
+        className={`tab-button ${activeTabCss}`}
+        onClick={onClickTab}
+      >
+        <h1 className="tab-heading">{displayText}</h1>
+      </button>
+    </li>
+  )
+}
+
+const randomImage = () => {
+  const randomNumber = Math.floor(Math.random() * imagesList.length)
+  const randomImageItem = imagesList[randomNumber]
+  return randomImageItem
+}
+
 class App extends Component {
-  state = {
-    websiteInput: '',
-    usernameInput: '',
-    passwordInput: '',
-    passwordsList: [],
-    searchInput: '',
-    isPasswordsVisible: false,
-  }
-
-  onChangeWebsite = event => {
-    this.setState({websiteInput: event.target.value})
-  }
-
-  onChangeUsername = event => {
-    this.setState({usernameInput: event.target.value})
-  }
-
-  onChangePassword = event => {
-    this.setState({passwordInput: event.target.value})
-  }
-
-  addPassword = event => {
-    event.preventDefault()
-    const {websiteInput, usernameInput, passwordInput} = this.state
-    const newPassword = {
-      id: uuid(),
-      websiteInput,
-      passwordInput,
-      usernameInput,
-      randomColor: colors[Math.floor(Math.random() * colors.length)],
+  constructor(props) {
+    super(props)
+    this.state = {
+      score: 0,
+      activeTabId: tabsList[0].tabId,
+      timeLeft: 60,
+      isGameRunning: true,
+      randomImageItem: imagesList[0],
     }
-    this.setState(prevState => ({
-      passwordsList: [...prevState.passwordsList, newPassword],
-      websiteInput: '',
-      passwordInput: '',
-      usernameInput: '',
-    }))
   }
 
-  deleteListItem = id => {
-    const {passwordsList} = this.state
-    const listAfterDelete = passwordsList.filter(eachList => eachList.id !== id)
+  componentDidMount() {
+    this.timeID = setInterval(this.timeDecrease, 1000)
+    // const {timeLeft} = this.state
+    // if (timeLeft === 0) {
+    //   clearInterval(this.timeID)
+    //   //   this.setState({isGameRunning: false})
+    // }
+
+    // setState not work in component
+  }
+
+  //   componentWillUnmount() {
+  //     clearInterval(this.timeID)
+  // setState not work in component
+  //   }
+
+  timeDecrease = () => {
+    const {timeLeft, isGameRunning} = this.state
+    if (timeLeft > 0 && isGameRunning) {
+      this.setState(prevState => ({
+        timeLeft: prevState.timeLeft - 1,
+      }))
+    } else {
+      this.setState({isGameRunning: false})
+    }
+  }
+
+  filteredList = () => {
+    const {activeTabId} = this.state
+    return imagesList.filter(eachImage => eachImage.category === activeTabId)
+  }
+
+  changeTab = tabId => {
+    this.setState({activeTabId: tabId})
+  }
+
+  thumbnailClick = id => {
+    const {randomImageItem} = this.state
+
+    if (randomImageItem.id === id) {
+      this.setState(prevState => ({
+        score: prevState.score + 1,
+        randomImageItem: randomImage(),
+      }))
+    } else if (randomImageItem.id !== id) {
+      clearInterval(this.timeID)
+      this.setState({
+        isGameRunning: false,
+      })
+    }
+  }
+
+  playAgain = () => {
     this.setState({
-      passwordsList: listAfterDelete,
+      score: 0,
+      activeTabId: tabsList[0].tabId,
+      timeLeft: 60,
+      isGameRunning: true,
+      randomImageItem: imagesList[0],
     })
+    setInterval(this.timeDecrease, 1000)
   }
 
-  onChangeSearch = event => {
-    this.setState({searchInput: event.target.value})
+  //   stopTheTimer = () => {
+  //     const {timeLeft, isGameRunning} = this.state
+  //     if (timeLeft === 0) {
+  //       this.setState((isGameRunning: false))
+  //     }
+  //   }
+
+  PictureView = () => {
+    const {activeTabId, randomImageItem} = this.state
+    const filteredList = this.filteredList()
+    const {imageUrl} = randomImageItem
+    return (
+      <div className="card-container">
+        <ul>
+          <li>
+            <img src={imageUrl} alt="match" className="match-image" />
+          </li>
+        </ul>
+
+        <div>
+          <ul className="tabs-container">
+            {tabsList.map(eachTab => (
+              <Tabs
+                eachTab={eachTab}
+                key={eachTab.tabId}
+                changeTab={this.changeTab}
+                isTabActive={activeTabId === eachTab.tabId}
+              />
+            ))}
+          </ul>
+        </div>
+        <div>
+          <ul className="images-container">
+            {filteredList.map(eachImage => (
+              <Image
+                eachImage={eachImage}
+                key={eachImage.id}
+                thumbnailClick={this.thumbnailClick}
+              />
+            ))}
+          </ul>
+        </div>
+      </div>
+    )
   }
 
-  onClickViewHidePassword = () => {
-    this.setState(prevState => ({
-      isPasswordsVisible: !prevState.isPasswordsVisible,
-    }))
+  NavBar = () => {
+    const {score, timeLeft} = this.state
+    return (
+      <li className="nav-bar-container">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
+          className="app-logo-image"
+          alt="website logo"
+        />
+        <div className="score-time-container">
+          <div className="score-text">
+            <p className="score">Score:</p>
+            <p className="span-text">{score}</p>
+          </div>
+
+          <div className="time-container">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png"
+              alt="timer"
+              className="timer-logo"
+            />
+            <p className="span-text">{timeLeft} sec</p>
+          </div>
+        </div>
+      </li>
+    )
   }
 
   render() {
-    const {
-      websiteInput,
-      usernameInput,
-      passwordInput,
-      passwordsList,
-      searchInput,
-      isPasswordsVisible,
-    } = this.state
-    const finalList = passwordsList.filter(eachItem =>
-      eachItem.websiteInput.toLowerCase().includes(searchInput.toLowerCase()),
-    )
-    const count = finalList.length
+    const {score, isGameRunning} = this.state
 
     return (
-      <div className="bg-container">
-        <div className="app-container">
-          <div className="logo-container">
-            <img
-              className="app-logo"
-              src="https://assets.ccbp.in/frontend/react-js/password-manager-logo-img.png"
-              alt="app logo"
-            />
-          </div>
-          <div className="inputs-container">
-            <div className="form-container">
-              <form onSubmit={this.addPassword}>
-                <h1 className="form-heading">Add New Password</h1>
-                <div className="input-container">
-                  <div className="icon">
-                    <img
-                      src="https://assets.ccbp.in/frontend/react-js/password-manager-website-img.png"
-                      alt="website"
-                      className="icon-style"
-                    />
-                  </div>
-                  <input
-                    className="input"
-                    type="text"
-                    placeholder="Enter Website"
-                    onChange={this.onChangeWebsite}
-                    value={websiteInput}
-                  />
-                </div>
-                <div className="input-container">
-                  <div className="icon">
-                    <img
-                      src="https://assets.ccbp.in/frontend/react-js/password-manager-username-img.png"
-                      alt="username"
-                      className="icon-style"
-                    />
-                  </div>
-                  <input
-                    className="input"
-                    type="text"
-                    placeholder="Enter Username"
-                    onChange={this.onChangeUsername}
-                    value={usernameInput}
-                  />
-                </div>
-                <div className="input-container">
-                  <div className="icon">
-                    <img
-                      src="https://assets.ccbp.in/frontend/react-js/password-manager-password-img.png"
-                      alt="password"
-                      className="icon-style"
-                    />
-                  </div>
-                  <input
-                    className="input"
-                    type="password"
-                    placeholder="Enter Password"
-                    onChange={this.onChangePassword}
-                    value={passwordInput}
-                  />
-                </div>
-                <div className="add-button-container">
-                  <button type="submit" className="add-button">
-                    Add
-                  </button>
-                </div>
-              </form>
-            </div>
-            <img
-              className="password-manager-image large-view"
-              src="https://assets.ccbp.in/frontend/react-js/password-manager-lg-img.png"
-              alt="password manager"
-            />
-            <img
-              className="password-manager-image medium-view"
-              src="https://assets.ccbp.in/frontend/react-js/password-manager-sm-img.png"
-              alt="password manager"
-            />
-          </div>
-          <div className="passwords-container">
-            <div className="title-and-search-container">
-              <div className="title-container">
-                <h1 className="password-heading">Your Passwords</h1>
-                <p className="count">{count}</p>
-              </div>
-              <div className="search-container">
-                <div className="search-logo">
-                  <img
-                    src="https://assets.ccbp.in/frontend/react-js/password-manager-search-img.png"
-                    alt="search"
-                    className="search-image"
-                  />
-                </div>
-                <input
-                  className="search-input"
-                  type="search"
-                  placeholder="search"
-                  onChange={this.onChangeSearch}
-                />
-              </div>
-            </div>
-            <hr />
-            <div className="checkBox-container">
-              <input
-                type="checkbox"
-                id="checkBox"
-                onClick={this.onClickViewHidePassword}
-              />
-              <label className="checkBox-text" htmlFor="checkBox">
-                Show Passwords
-              </label>
-            </div>
-            <div className="passwords-cards-container">
-              {count !== 0 ? (
-                <ul className="delete-container">
-                  {finalList.map(eachItem => (
-                    <PasswordElement
-                      eachItem={eachItem}
-                      key={eachItem.id}
-                      deleteListItem={this.deleteListItem}
-                      isPasswordsVisible={isPasswordsVisible}
-                    />
-                  ))}
-                </ul>
-              ) : (
-                <NoPassword />
-              )}
-            </div>
-          </div>
+      <div className="app-container">
+        <ul>{this.NavBar()}</ul>
+        <div className="bottom-container">
+          {isGameRunning ? (
+            this.PictureView()
+          ) : (
+            <Score score={score} playAgain={this.playAgain} />
+          )}
         </div>
       </div>
     )
@@ -281,3 +494,6 @@ class App extends Component {
 }
 
 export default App
+
+// note: there is no need og ul list for main image and for nav bar ,just for pass test cases i gave used
+// ul and list
