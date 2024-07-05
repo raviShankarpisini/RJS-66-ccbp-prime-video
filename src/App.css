@@ -10,3 +10,298 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.bg-container {
+  display: flex;
+  justify-content: center;
+  background-color: #9ba9eb;
+  height: 100%;
+  background-size: cover;
+}
+.app-container {
+  width: 90%;
+  margin: 30px;
+}
+.app-logo {
+  height: 40px;
+}
+.inputs-container {
+  background-color: #5763a5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 10px;
+}
+.form-container {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #454f84;
+  width: 400px;
+}
+
+.form-heading {
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: #f8fafc;
+}
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  margin-bottom: 10px;
+}
+
+.icon {
+  background-color: #f8fafc;
+  height: 30px;
+  padding: 5px;
+}
+.icon-style {
+  height: 20px;
+}
+.input {
+  height: 30px;
+  background-color: #f8fafc;
+  border: none;
+  width: 100%;
+
+}
+.add-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.add-button {
+  align-self: flex-end;
+  background-color: #0b69ff;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  font-family: 'Roboto';
+  font-size: 15px;
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.password-manager-image {
+  width: 100%;
+  max-width: 400px;
+}
+
+.passwords-container {
+  background-color: #5763a5;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.title-and-search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.password-heading {
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.count {
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 10px;
+  border: solid 0.5px white;
+  margin-left: 10px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+.search-logo {
+  background-color: #f8fafc;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid #5763a5;
+}
+
+.search-image {
+  height: 20px;
+  margin: auto;
+}
+.search-input {
+  height: 30px;
+  background-color: #f8fafc;
+  border: none;
+}
+
+.checkBox-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.checkBox-text {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.delete-card {
+  border-radius: 10px;
+  padding: 10px;
+  border: solid #b6c3ca 1px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.sub-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.color1 {
+  background-color: #b6c3ca;
+}
+.color2 {
+  background-color: #7683cb;
+}
+.color3 {
+  background-color: #f59e0b;
+}
+.color4 {
+  background-color: #10b981;
+}
+.color5 {
+  background-color: #f97316;
+}
+.color6 {
+  background-color: #b91c1c;
+}
+.color7 {
+  background-color: #14b8a6;
+}
+.color8 {
+  background-color: #ffffff;
+}
+.color9 {
+  background-color: #0ea5e9;
+}
+
+.user-logo {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto';
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+.text-container {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 15px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.delete-icon {
+  height: 20px;
+}
+
+.delete-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.stars {
+  width: 100px;
+  width: 100;
+}
+.no-passwords-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.no-passwords-image {
+  max-width: 500px;
+  width: 100;
+}
+.no-password-text {
+  color: white;
+  font-family: 'Roboto';
+  font-size: 15px;
+  text-align: center;
+}
+.passwords-cards-container {
+  display: flex;
+  flex-direction: row;
+}
+.medium-view {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .inputs-container {
+    flex-direction: column;
+  }
+  .form-container {
+    order: 1;
+  }
+  .app-logo {
+    max-width: 300px;
+  }
+  .no-passwords-image {
+    max-width: 300px;
+  }
+  .delete-container {
+    flex-direction: column;
+  }
+  .large-view {
+    display: none;
+  }
+  .medium-view {
+    display: flex;
+  }
+}
