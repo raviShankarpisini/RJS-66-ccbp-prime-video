@@ -6,8 +6,7 @@ import 'reactjs-popup/dist/index.css'
 
 import './index.css'
 
-const MovieItem = props => {
-  const {movieDetails} = props
+const MovieItem = ({movieDetails}) => {
   const {thumbnailUrl, videoUrl} = movieDetails
 
   return (
@@ -40,3 +39,4 @@ const MovieItem = props => {
 }
 
 export default MovieItem
+

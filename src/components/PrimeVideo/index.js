@@ -5,8 +5,7 @@ import './index.css'
 const actionMovie = 'ACTION'
 const comedyMovie = 'COMEDY'
 
-const PrimeVideo = props => {
-  const {moviesList} = props
+const PrimeVideo = ({moviesList}) => {
   const actionMoviesList = moviesList.filter(
     movie => movie.categoryId === actionMovie,
   )
@@ -33,3 +32,4 @@ const PrimeVideo = props => {
 }
 
 export default PrimeVideo
+

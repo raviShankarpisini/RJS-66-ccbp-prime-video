@@ -5,13 +5,12 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import MovieItem from '../MovieItem'
 
-const MoviesSlider = props => {
+const MoviesSlider = ({moviesList}) => {
   const settings = {
     dots: false,
     slidesToScroll: 1,
     slidesToShow: 4,
   }
-  const {moviesList} = props
 
   return (
     <>
@@ -25,3 +24,4 @@ const MoviesSlider = props => {
 }
 
 export default MoviesSlider
+
